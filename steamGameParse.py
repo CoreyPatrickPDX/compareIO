@@ -2,11 +2,10 @@ import requests
 import json
 
 
-def main():
-    game = "Fallout 2"
+def returnPrice(game):
     gameID = getAppID(game)
     gamePrice = getAppPrice(gameID)
-    print(gamePrice)
+    return (gamePrice)
 
 
 def getAppID(appName):
@@ -30,7 +29,3 @@ def getAppPrice(appID):
     priceDetails = appData["price_overview"]
     appPrice = priceDetails["final_formatted"]
     return appPrice
-
-
-if __name__ == '__main__':
-    main()

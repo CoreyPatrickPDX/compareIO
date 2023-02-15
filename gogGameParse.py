@@ -2,12 +2,7 @@ import requests
 import json
 
 
-def main():
-    game = "Fallout 2"
-    print(getGamePrice(game))
-
-
-def getGamePrice(game):
+def returnGamePrice(game):
     response = requests.get(
         "https://embed.gog.com/games/ajax/filtered?search=" + game)
     # jprint(response.json())
@@ -26,7 +21,3 @@ def getGamePrice(game):
 # def jprint(obj):
 #     text = json.dumps(obj, sort_keys=True, indent=4)
 #     print(text)
-
-
-if __name__ == '__main__':
-    main()
