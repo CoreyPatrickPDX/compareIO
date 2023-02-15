@@ -16,4 +16,5 @@
    2. As a person who wants to save money I want to be sure I'm shown the lowest price of all sites that I don't lose money.
    3. As an internet user I want to easily get to the site with the lowest price so that I don't use extra time searching for the game on the site using a second tool.
    
-4. The overall structure will be a file that has a class holding the name of the game being looked for, a folder for the logic to use different site API or services, and possibly a folder structure for a Blazor Page to act as the UI.
+4. The overall structure will be a file that has a class holding the name of the game being looked for, a folder for the logic to use different site API or services,
+   and possibly a folder structure for a Blazor Page to act as the UI.
