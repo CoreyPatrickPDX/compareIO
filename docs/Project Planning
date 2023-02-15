@@ -1,13 +1,13 @@
 1. __List of Features:__
   1. User able to enter name of game
-  1. Display cheapest options of sites
-  1. Show price history from one site
-  1. Show price history from all sites
-  1. Show price history graph
-  1. Get prices of the game from 3 sites
-  1. Get prices of the game from more than 3 sites
-  1. Show DLC and extra items for the game and their prices
-  1. Display a useable link to game page for lowest priced site 
+  2. Display cheapest options of sites
+  3. Show price history from one site
+  4. Show price history from all sites
+  5. Show price history graph
+  6. Get prices of the game from 3 sites
+  7. Get prices of the game from more than 3 sites
+  8. Show DLC and extra items for the game and their prices
+  9. Display a useable link to game page for lowest priced site 
   
 2. **MVP:** User enters name of a game with close spelling, prices from three diferent sites are shown, user is able to click link to specified site.
 
