@@ -21,10 +21,10 @@ def getAppID(appName):
 
 
 def getAppPrice(appID):
-    response = requests.get(
-        "http://store.steampowered.com/api/appdetails?appids=" + str(appID) + "&cc=us&l=en")
-    # jprint(response.json())
     appIDString = str(appID)
+    response = requests.get(
+        "http://store.steampowered.com/api/appdetails?appids=" + appIDString + "&cc=us&l=en")
+    # jprint(response.json())
     app = response.json()
     appDetails = app[str(appIDString)]
     appData = appDetails["data"]
