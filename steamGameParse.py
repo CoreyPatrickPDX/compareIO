@@ -17,6 +17,8 @@ def getAppID(appName):
     for app in appDict["apps"]:
         if app["name"] == appName:
             return app["appid"]
+    notFound = "Item not found"
+    reuturn = notFound
 
 
 def getAppPrice(appID):
