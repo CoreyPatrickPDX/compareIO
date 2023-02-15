@@ -3,16 +3,16 @@ import json
 
 
 def main():
-    game = "Monster Sanctuary"
+    game = "Fallout 2"
     gameID = getAppID(game)
-    getAppPrice(gameID)
+    gamePrice = getAppPrice(gameID)
+    print(gamePrice)
 
 
 def getAppID(appName):
     response = requests.get(
         "https://api.steampowered.com/ISteamApps/GetAppList/v2/")
     responseDict = response.json()
-
     appDict = responseDict["applist"]
 
     for app in appDict["apps"]:
@@ -24,13 +24,12 @@ def getAppPrice(appID):
     appIDString = str(appID)
     response = requests.get(
         "http://store.steampowered.com/api/appdetails?appids=" + appIDString + "&cc=us&l=en")
-    # jprint(response.json())
     app = response.json()
     appDetails = app[str(appIDString)]
     appData = appDetails["data"]
     priceDetails = appData["price_overview"]
     appPrice = priceDetails["final_formatted"]
-    print(type(appPrice))
+    return appPrice
 
 
 if __name__ == '__main__':
