@@ -4,7 +4,7 @@ import APIConnections.steamGameParse as steam
 
 
 def main():
-    game = input("Please enter the game you wish to buy:")
+    game = input("Please enter the game you wish to buy:").lower()
     steamPrice, steamPriceFormatted, steamUrl = steam.returnPrice(game)
     gogPrice, gogPriceFormatted, gogUrl = gog.returnGamePrice(game)
 
@@ -23,12 +23,12 @@ def main():
     while (True):
         try:
             openStore = str(input(
-                'Would you like to open the store page for the lowest price? Please type Y for yes or N for no: '))
-            while (openStore.lower() != 'y' and openStore.lower() != 'n'):
+                'Would you like to open the store page for the lowest price? Please type Y for yes or N for no: ').lower())
+            while (openStore != 'y' and openStore != 'n'):
                 openStore = input('Please enter Y for yes or N for no: ')
 
         except ValueError:
-            print('Please enter Y for yes or N for no: ')
+            print('Please enter Y for yes or N for no')
             continue
 
         else:
