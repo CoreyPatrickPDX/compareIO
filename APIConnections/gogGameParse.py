@@ -1,17 +1,22 @@
 import requests
 import json
 
+APIUrl = "https://embed.gog.com/games/ajax/filtered?search="
+storeUrl = "gog.com"
+
 
 def returnGamePrice(game):
     response = requests.get(
-        "https://embed.gog.com/games/ajax/filtered?search=" + game)
+        APIUrl + game)
     gameJson = response.json()
     gameList = gameJson["products"]
     for item in gameList:
         if game == item["title"]:
             gamePriceInfo = item["price"]
-            gamePrice = gamePriceInfo["symbol"] + gamePriceInfo["amount"]
-            return gamePrice
+            gamePrice = gamePriceInfo["amount"]
+            gamePriceFormatted = gamePriceInfo["symbol"] + gamePrice
+            gogUrl = storeUrl + str(item["url"])
+            return gamePrice, gamePriceFormatted, gogUrl
     else:
         notFound = "Item not found"
-        reuturn = notFound
+        return notFound

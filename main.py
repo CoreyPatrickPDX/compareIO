@@ -4,11 +4,18 @@ import APIConnections.steamGameParse as steam
 
 def main():
     game = input("Please enter the game you wish to buy:")
-    steamPrice = steam.returnPrice(game)
-    gogPrice = gog.returnGamePrice(game)
+    steamPrice, steamPriceFormatted, steamUrl = steam.returnPrice(game)
+    gogPrice, gogPriceFormatted, gogUrl = gog.returnGamePrice(game)
 
-    print("The price on Steam is:", steamPrice)
-    print("The price on GOG is:", gogPrice)
+    print("The price on Steam is:", steamPriceFormatted)
+    print("The price on GOG is:", gogPriceFormatted)
+
+    if (float(steamPrice) < float(gogPrice)):
+        print(
+            'This game is cheaper on Steam. Here is the URL for the store page:', steamUrl)
+
+    else:
+        print('This game is cheaper on GOG. Here is the URL for the store page:', gogUrl)
 
 
 if __name__ == '__main__':
