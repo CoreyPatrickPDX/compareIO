@@ -23,13 +23,14 @@ def main():
     while (True):
         try:
             openStore = str(input(
-                'Would you like to open the store page for the lowest price? Please type Y for yes or N for no:'))
+                'Would you like to open the store page for the lowest price? Please type Y for yes or N for no: '))
             while (openStore.lower() != 'y' and openStore.lower() != 'n'):
-                openStore = input('Please enter Y for yes or N for no:')
+                openStore = input('Please enter Y for yes or N for no: ')
 
         except ValueError:
-            print('Please enter Y for yes or N for no:')
+            print('Please enter Y for yes or N for no: ')
             continue
+
         else:
             break
 
