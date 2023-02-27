@@ -2,7 +2,7 @@ import requests
 import json
 
 APIUrl = "https://embed.gog.com/games/ajax/filtered?search="
-storeUrl = "gog.com"
+storeUrl = "https://www.gog.com/"
 
 
 def returnGamePrice(game):

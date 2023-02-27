@@ -2,7 +2,7 @@ import requests
 import json
 
 APIUrl = "https://api.steampowered.com/ISteamApps/GetAppList/v2/"
-storeUrl = "store.steampowered.com/app/"
+storeUrl = "https://store.steampowered.com//app/"
 
 
 def returnPrice(game):
@@ -21,7 +21,7 @@ def getAppID(appName):
         if app["name"].lower() == appName.lower():
             return app["appid"]
     notFound = "Item not found"
-    reuturn = notFound
+    return notFound
 
 
 def getAppPrice(appID):
