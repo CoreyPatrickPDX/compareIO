@@ -18,7 +18,7 @@ def getAppID(appName):
     appDict = responseDict["applist"]
 
     for app in appDict["apps"]:
-        if app["name"] == appName:
+        if app["name"].lower() == appName.lower():
             return app["appid"]
     notFound = "Item not found"
     reuturn = notFound

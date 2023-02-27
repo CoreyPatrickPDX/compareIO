@@ -11,7 +11,7 @@ def returnGamePrice(game):
     gameJson = response.json()
     gameList = gameJson["products"]
     for item in gameList:
-        if game == item["title"]:
+        if game.lower() == item["title"].lower():
             gamePriceInfo = item["price"]
             gamePrice = gamePriceInfo["amount"]
             gamePriceFormatted = gamePriceInfo["symbol"] + gamePrice
