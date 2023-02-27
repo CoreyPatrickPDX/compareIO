@@ -1,5 +1,5 @@
-import gogGameParse as gog
-import steamGameParse as steam
+import APIConnections.gogGameParse as gog
+import APIConnections.steamGameParse as steam
 
 
 def main():
