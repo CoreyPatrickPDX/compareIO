@@ -21,12 +21,15 @@ def main():
                       font=('Arial Bold', 16), justification='left')
     gogPriceText = sg.Text('', key="-GOG PRICE-",
                            font=('Arial Bold', 16), justification='left')
+    lowestURL = sg.Text('', key="-URL-",
+                        font=('Arial Bold', 16), enable_events=True, justification='center')
 
     layout = [[textTitle, inputText],
               [searchButton],
               [textGamePrice],
               [steamText, steamPriceText],
               [gogText, gogPriceText],
+              [lowestURL],
               [exitButton]]
     window = sg.Window("compareIO", layout)
 
@@ -40,8 +43,23 @@ def main():
                 game.lower())
             gogPrice, gogPriceFormatted, gogUrl = gog.returnGamePrice(
                 game.lower())
+            if (float(steamPrice) < float(gogPrice)):
+                bestPriceUrl = steamUrl
+                urlText = 'Click this text to go to Steam webpage.'
+
+            else:
+                bestPriceUrl = gogUrl
+                urlText = 'Click this text to go to GOG webpage.'
+
             window['-STEAM PRICE-'].update(steamPriceFormatted)
             window['-GOG PRICE-'].update(gogPriceFormatted)
+            window['-URL-'].update(urlText)
+            window['-URL-'].set_cursor('hand2')
+        if event == '-URL-':
+            try:
+                webbrowser.open(bestPriceUrl, new=1)
+            except:
+                return
         if event == 'Exit' or event == sg.WIN_CLOSED:
             break
     window.close()
