@@ -41,12 +41,13 @@ def main():
 
             steamPrice, steamPriceFormatted, steamUrl = steam.returnPrice(
                 game.lower())
+
             gogPrice, gogPriceFormatted, gogUrl = gog.returnGamePrice(
                 game.lower())
+
             if (float(steamPrice) < float(gogPrice)):
                 bestPriceUrl = steamUrl
                 urlText = 'Click this text to go to Steam webpage.'
-
             else:
                 bestPriceUrl = gogUrl
                 urlText = 'Click this text to go to GOG webpage.'
