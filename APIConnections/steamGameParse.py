@@ -32,6 +32,6 @@ def getAppPrice(appID):
     appDetails = app[str(appIDString)]
     appData = appDetails["data"]
     priceDetails = appData["price_overview"]
-    appPrice = priceDetails["initial"]/100
+    appPrice = priceDetails["final"]/100
     appPriceFormatted = priceDetails["final_formatted"]
     return appPrice, appPriceFormatted, storeUrl + str(appID)
