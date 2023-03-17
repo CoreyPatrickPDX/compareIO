@@ -1,13 +1,15 @@
 import requests
 import json
+from apiRequest import apiRequest
 
 APIUrl = "https://embed.gog.com/games/ajax/filtered?search="
 storeUrl = "https://www.gog.com/"
 
 
 def returnGamePrice(game):
-    response = requests.get(
+    response = apiRequest(
         APIUrl + game)
+
     gameJson = response.json()
     gameList = gameJson["products"]
     for item in gameList:
